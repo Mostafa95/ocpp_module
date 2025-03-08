@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+import chargers.views as views
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("chargers/", views.list_chargers, name="list_chargers"),
+    path("remote_start/", views.remote_start_transaction, name="remote_start_transaction"),
+    path("chargers/<str:charger_id>/status/", views.get_charger_status, name="charger_status"),
+    path("get_logs/", views.get_logs, name="get_logs"),
+
 ]

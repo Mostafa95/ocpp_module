@@ -133,3 +133,46 @@ CHANNEL_LAYERS = {
         "BACKEND": "channels.layers.InMemoryChannelLayer",
     },
 }
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'event_file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/events.log',
+            'formatter': 'verbose',
+        },
+        'transaction_file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/transactions.log',
+            'formatter': 'verbose',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose',
+        },
+    },
+    'loggers': {
+        'events': {
+            'handlers': ['event_file', 'console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+        'transactions': {
+            'handlers': ['transaction_file', 'console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
