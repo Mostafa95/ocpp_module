@@ -33,15 +33,14 @@ ocpp_backend
 ## 🛠️ Installation & Setup
 ### 1️⃣ Clone the Repository
 ```sh
-git clone https://github.com/ocpp_module/ocpp_backend.git
+git clone git@github.com:Mostafa95/ocpp_module.git
 cd ocpp_backend
 ```
 
 ### 2️⃣ Create a Virtual Environment & Install Dependencies
 ```sh
 python3 -m venv env
-source env/bin/activate  # On macOS/Linux
-env\Scripts\activate    # On Windows
+source env/bin/activate
 
 pip install -r requirments.txt
 ```
